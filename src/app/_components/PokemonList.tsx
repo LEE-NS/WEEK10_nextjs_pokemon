@@ -11,7 +11,7 @@ const PokemonList = () => {
     data: pokemons,
     isPending,
     isError,
-  } = useQuery({
+  } = useQuery<Pokemon[]>({
     queryKey: ["pokemons"],
     queryFn: async () => {
       const response = await fetch("api/pokemons");
