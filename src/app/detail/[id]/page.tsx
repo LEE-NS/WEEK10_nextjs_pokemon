@@ -14,6 +14,7 @@ const DetailPage = async ({ params }: { params: { id: string } }) => {
           <h1 className="text-lg font-bold">{pokemonData.korean_name}</h1>
         </div>
         <Image
+          priority
           width={200}
           height={200}
           src={pokemonData.sprites.front_default}

@@ -1,15 +1,7 @@
-import Image from "next/image";
-
 const ErrorBox = () => {
   return (
-    <div className="w-screen h-screen bg-black bg-opacity-40 flex justify-center items-center">
-      <div className="w-[250px] h-[250px] bg-gray-300 flex justify-center items-center flex-col gap-5 rounded-xl shadow-xl">
-        <Image
-          width={120}
-          height={120}
-          src="https://static.vecteezy.com/system/resources/thumbnails/022/068/710/small_2x/rejected-sign-and-symbol-clip-art-free-png.png"
-          alt="error_img"
-        />
+    <div className="w-screen h-screen flex justify-center items-center">
+      <div className="w-[250px] h-[80px] bg-gray-100 flex justify-center items-center flex-col rounded-xl shadow-xl">
         <p className="font-bold text-center">
           데이터 불러오기 실패!
           <br />
