@@ -1,16 +1,14 @@
-export default function Home() {
+import PokemonList from "./_components/PokemonList";
+import { GET } from "./api/pokemons/route";
+
+const Home = () => {
+  /* src/app/pokemons/route.ts */
+
   return (
     <div className="flex flex-col justify-center items-center gap-10 w-11/12 ml-auto mr-auto mt-0 mb-0">
-      <h1 className="text-center mt-3 mb-3 text-3xl font-extrabold">Pokemon</h1>
-      <ul className="flex justify-center items-center gap-3 flex-wrap">
-        <li className="border border-slate-400 p-3 rounded-xl flex flex-col justify-center gap-1">
-          <div className="w-36 h-36 bg-slate-400">image</div>
-          <p>
-            No.<span>number</span>
-          </p>
-          <h3 className="font-bold text-lg">pokemon name</h3>
-        </li>
-      </ul>
+      <PokemonList />
     </div>
   );
-}
+};
+
+export default Home;
