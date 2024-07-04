@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 export const GET = async (
   request: Request,
@@ -62,7 +62,7 @@ export const GET = async (
     };
 
     return NextResponse.json(pokemonData);
-  } catch (error) {
+  } catch (error: AxiosError | unknown) {
     console.error("Error fetching Pokemon data:", error);
     return NextResponse.json({ error: "Failed to fetch data" });
   }

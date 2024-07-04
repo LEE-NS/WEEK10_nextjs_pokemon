@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const TOTAL_POKEMON = 151;
 
@@ -28,7 +28,7 @@ export const GET = async (request: Request) => {
     );
 
     return NextResponse.json(allPokemonData);
-  } catch (error) {
+  } catch (error: AxiosError | unknown) {
     return NextResponse.json({ error: "Failed to fetch data" });
   }
 };
