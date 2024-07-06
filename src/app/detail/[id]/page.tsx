@@ -3,8 +3,19 @@ import { Pokemon } from "@/types/pokemon";
 import Image from "next/image";
 import Link from "next/link";
 
-const DetailPage = async ({ params }: { params: { id: string } }) => {
-  const pokemonData: Pokemon = await getPokemonData(params.id);
+interface DetailParam {
+  params: { id: string };
+}
+
+export async function generateMetadata({ params: { id } }: DetailParam) {
+  const pokemonData: Pokemon = await getPokemonData(id);
+  return {
+    title: `No.${pokemonData.id} | ${pokemonData.korean_name}`,
+  };
+}
+
+export default async function DetailPage({ params: { id } }: DetailParam) {
+  const pokemonData: Pokemon = await getPokemonData(id);
 
   return (
     <div className="w-screen flex justify-center items-center mb-10">
@@ -71,6 +82,4 @@ const DetailPage = async ({ params }: { params: { id: string } }) => {
       </div>
     </div>
   );
-};
-
-export default DetailPage;
+}
